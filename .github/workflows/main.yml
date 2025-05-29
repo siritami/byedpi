@@ -20,7 +20,8 @@ jobs:
       uses: ncipollo/release-action@v1.14.0
       with:
         artifacts: |
-          *
+          ciadpi.exe 
         name: ByeDPI
         tag: download
         body: Download Below
+        allowUpdates: true
