@@ -9,9 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - name: Set up MinGW
+      uses: egor-tensin/setup-mingw@v2
+      with:
+        platform: x64
     - name: Build and export
       run: |
-        make windows
+        make windows CC=x86_64-w64-mingw32-gcc
     - name: Release
       uses: ncipollo/release-action@v1.14.0
       with:
